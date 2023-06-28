@@ -1,0 +1,6 @@
+{
+    "require": {
+        "htmlburger/carbon-fields": "^3.6",
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;600&display=swap');
+
+form.enquiry_form{
+    font-family: 'Raleway', sans-serif;;
+    background-color: #eeeeee;
+    margin-top: 6rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.form_section label{
+    display:block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form_section input, .form_section textarea{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 70%;
+    padding: .5rem .7rem;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.form_section textarea{
+    resize: none;
+    width: 80%;
+}
