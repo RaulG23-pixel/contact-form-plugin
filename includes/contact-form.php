@@ -11,8 +11,9 @@ add_action('init', 'create_submissions_page');
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 add_action('add_meta_boxes','create_meta_box');
 
+//Create a meta box for Submissions
 function create_meta_box(){
-    add_meta_box('custom_contact_form','submission','display_submission','submission');
+    add_meta_box('custom_contact_form','Submission','display_submission','submission');
 }
 
 function display_submission(){
@@ -27,6 +28,7 @@ function display_submission(){
 
 
 function create_submissions_page(){
+    //Atributes for submissions page
     $args = [
         'public' => true,
         'has_archive' => true,
@@ -93,11 +95,11 @@ function handle_enquiry($data){
    
     function mailtrap(PHPMailer $phpmailer) {
         $phpmailer->isSMTP();
-        $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+        $phpmailer->Host = $_ENV['MAIL_HOST'];
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = 2525;
-        $phpmailer->Username = '801b93a0129ac3';
-        $phpmailer->Password = 'b86f71c2b39769';
+        $phpmailer->Port = $_ENV['MAIL_PORT'];;
+        $phpmailer->Username = $_ENV['MAIL_USERNAME'];;
+        $phpmailer->Password = $_ENV['MAIL_PASSWORD'];
 
         return $phpmailer;
     }

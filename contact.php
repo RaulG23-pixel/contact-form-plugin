@@ -26,10 +26,13 @@
             include_once MY_PLUGIN_PATH . "/includes/utilities.php";
             include_once MY_PLUGIN_PATH . "/includes/option-fields.php";
             include_once MY_PLUGIN_PATH . "/includes/contact-form.php";
+
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+            $dotenv->load();
+
         }
-
     }
-
+    
     $contactPlugin = new ContactPlugin();
 
     $contactPlugin->initialize();
